@@ -2,16 +2,12 @@ package com.ivoyant.SpringBootFinalProject.controller;
 
 import com.ivoyant.SpringBootFinalProject.entity.Department;
 import com.ivoyant.SpringBootFinalProject.service.DepartmentService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/departments")

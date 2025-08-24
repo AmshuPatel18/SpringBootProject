@@ -18,13 +18,20 @@ public class EmployeeService {
     private DepartmentRepository departmentRepo;
 
     public Employee createEmployee(Employee emp, Integer deptId) {
-        // Validate dept exists
-        if(!departmentRepo.existsById(deptId)) {
+        // 1. Check department exists
+        if (!departmentRepo.existsById(deptId)) {
             throw new RuntimeException("Invalid department ID");
         }
+
+        // 2. Check employee ID already exists
+        if (employeeRepo.existsById(emp.getEmpId())) {
+            throw new RuntimeException("Employee ID already exists");
+        }
+
         emp.setDeptId(deptId);
         return employeeRepo.save(emp);
     }
+
 
     public Employee updateEmployee(Integer id, Employee emp, Integer deptId) {
         if(!employeeRepo.existsById(id))
