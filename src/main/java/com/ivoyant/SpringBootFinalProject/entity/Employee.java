@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @Table("employee")
 public class Employee {
 
-    @PrimaryKey("emp_id")   // ✅ matches Cassandra column exactly
+    @PrimaryKey("emp_id")
     private Integer empId;
 
     @Column("emp_name")

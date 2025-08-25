@@ -11,14 +11,14 @@ import javax.validation.constraints.NotBlank;
 @Table("department")
 public class Department {
 
-    @PrimaryKey("dept_id")   // ✅ maps directly to Cassandra column
+    @PrimaryKey("dept_id")   // maps directly to Cassandra column
     private Integer deptId;
 
     @Column("dept_name")
     @NotBlank(message = "Department name cannot be empty")
     private String deptName;
 
-    // Getters & Setters
+
     public Integer getDeptId() {
         return deptId;
     }
