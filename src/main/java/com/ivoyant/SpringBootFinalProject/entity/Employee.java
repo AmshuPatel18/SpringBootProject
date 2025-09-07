@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 
 @Table("employee")
 public class Employee {
-
     @PrimaryKey("emp_id")
     private Integer empId;
 
@@ -34,7 +33,7 @@ public class Employee {
     @Column("dept_id")
     private Integer deptId;
 
-    // Getters & Setters
+
     public Integer getEmpId() {
         return empId;
     }

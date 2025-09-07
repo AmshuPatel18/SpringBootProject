@@ -15,7 +15,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    // 🔹 Create Employee
+
     @PostMapping
     public Employee create(
             @RequestHeader("departmentId") Integer deptId,
@@ -23,7 +23,7 @@ public class EmployeeController {
         return employeeService.createEmployee(emp, deptId);
     }
 
-    // 🔹 Update Employee
+
     @PutMapping("/{id}")
     public Employee update(
             @PathVariable Integer id,
@@ -32,19 +32,19 @@ public class EmployeeController {
         return employeeService.updateEmployee(id, emp, deptId);
     }
 
-    // 🔹 Get Employee by ID
+
     @GetMapping("/{id}")
     public Employee get(@PathVariable Integer id) {
         return employeeService.getEmployee(id);
     }
 
-    // 🔹 Get all employees (optional department filter via query param)
+    // get all employees ( department filter via query param)
     @GetMapping
     public List<Employee> getAll(@RequestParam(value = "departmentId", required = false) Integer deptId) {
         return employeeService.getAllEmployees(deptId);
     }
 
-    // 🔹 Delete Employee
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         employeeService.deleteEmployee(id);

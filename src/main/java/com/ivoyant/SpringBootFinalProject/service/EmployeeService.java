@@ -18,7 +18,7 @@ public class EmployeeService {
     @Autowired
     private DepartmentRepository departmentRepo;
 
-    // 🔹 Create Employee
+    // Create Employee
     public Employee createEmployee(Employee emp, Integer deptId) {
         // Name cannot be blank
         if (emp.getEmpName() == null || emp.getEmpName().trim().isEmpty()) {
@@ -49,7 +49,7 @@ public class EmployeeService {
         return employeeRepo.save(emp);
     }
 
-    // 🔹 Update Employee
+    // Update Employee
     public Employee updateEmployee(Integer id, Employee emp, Integer deptId) {
         if (!employeeRepo.existsById(id)) {
             throw new EmployeeNotFoundException(id);

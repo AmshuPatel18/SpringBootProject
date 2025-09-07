@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface EmployeeRepository extends CassandraRepository<Employee, Integer> {
 
-    // Use explicit query with ALLOW FILTERING
+
     @Query("SELECT * FROM employee WHERE dept_id = ?0 ALLOW FILTERING")
     List<Employee> findByDeptId(Integer deptId);
 }
